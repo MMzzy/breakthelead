@@ -1,35 +1,66 @@
 .navbar {
+    width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
 .navbar-nav {
     display: flex;
     flex-direction: row;
     background: none;
-    gap: 50px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    gap: 0px;
     list-style: none;
-    padding: 0;
+    padding: 0 20px;
     margin: 0;
     font-family: 'Cal Sans';
     font-weight: 700;
     font-size: 20px;
 }
 
+.nav-item {
+    display: flex;
+}
+
+.nav-right {
+    display: contents;
+}
+
 .nav-link {
     color: white;
     transition: 0.3s;
+    display: inline-block;
+}
+
+.nav-link:visited, .nav-link:focus, .nav-link:active {
+    color: white;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-link:hover{
-        /*odabrati neku boju za hover koja je komplementarna*/
-    transition: 0.3s;
+    transform: scale(1.15);
+    transition: 0.5s;
 }
 
 .nav-link svg {
-    font-size: 20px;
+    font-size: 30px;
     position: relative;
-    top: -2px;
+    top: -5px;
+    fill: white;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        font-size: clamp(24px, 2.5vw, 36px);
+        justify-content: space-between;
+    }
+
+    .nav-right {
+        display: flex;
+        gap: 40px;
+    }
 }
