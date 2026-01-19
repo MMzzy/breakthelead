@@ -43,7 +43,8 @@
 
 .nav-link:hover{
     transform: scale(1.15);
-    transition: 0.5s;
+    transition: 0.7s;
+    color: white;
 }
 
 .nav-link svg {

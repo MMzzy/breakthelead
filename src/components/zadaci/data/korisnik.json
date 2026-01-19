@@ -1,0 +1,16 @@
+{"ime" : "Maj",
+"prezime" : "Mezić",
+"godine" : 27,
+"vozacka" : true, 
+"vjestine" : [
+    "HTML", 
+    "CSS", 
+    "React"
+], 
+
+"adresa" : {
+    "ulica" : "Vrhovec 6",
+    "grad" : "Zagreb",
+    "pbroj" : 1000
+}
+}

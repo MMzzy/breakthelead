@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Special+Gothic+Expanded+One&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+  margin: 0;
+  background-color:#155dfc;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

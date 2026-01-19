@@ -5,6 +5,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./pages/Home";
 
+import Profil from "./components/zadaci/Profil";
+import Zadatak1 from "./components/zadaci/Zadatak1";
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +16,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
+
+
+        <Route path="/profil" element={<Profil />} />
+        <Route path="/korisnici" element={<Zadatak1 />} />
+
       </Routes>
     </BrowserRouter>
   );
