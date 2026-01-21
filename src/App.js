@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 
 import Profil from "./components/zadaci/Profil";
 import Zadatak1 from "./components/zadaci/Zadatak1";
+import Blog from "./components/Blog";
+import BlogSingle from "./components/BlogSingle";
+import Tecaj from "./components/zadaci/Tecaj";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
 
         <Route path="/profil" element={<Profil />} />
         <Route path="/korisnici" element={<Zadatak1 />} />
+        <Route path="/blog-page" element={<Blog />} />
+        <Route path="/blog-single" element={<BlogSingle />} />
+        <Route path="/tecaj" element={<Tecaj />} />
 
       </Routes>
     </BrowserRouter>
