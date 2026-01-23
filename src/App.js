@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import React from "react";
+import './Gutenberg.css';
+
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Contact from "./components/Contact";
