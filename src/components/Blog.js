@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 
+
+import Loader from "./Loader"
 import posts from'../components/zadaci/data/blog.json';
 import "./Blog.css";
+import { Link } from "react-router-dom"
 
 const Blog = () => {
 
@@ -18,21 +21,22 @@ const Blog = () => {
                     setPosts(data);
                 }
             )
-
-        }, []
+            .finally(() => setLoading(false));
+    }, []
     )
 
 
 
     return(
-        <div className='blog-post'>
+        <>
+            {loading && <Loader/>}
+            <div className='blog-post'>
             <div className='container'>
-                <h1>Blog</h1>
                 <div className='row'>
                     { posts.map((post) => (
                         <div className='col-md-4 mb-4'>
                             <img src={post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} className='mb-3' alt={post.title.rendered}/>
-                            <h2>{post.title.rendered}</h2>
+                            <Link to={`/blog/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
                             <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
                             <p>{post._embedded.author[0].name}</p>
                          </div>   
@@ -41,6 +45,7 @@ const Blog = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

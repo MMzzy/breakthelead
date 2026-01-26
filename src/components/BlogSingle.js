@@ -1,7 +1,25 @@
+import { useParams } from "react-router-dom";
 import "./Blog.css";
 import post from "./zadaci/data/blogsingle.json";
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const BlogSingle = () => {
+  const { slug } = useParams();
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      `https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+    )
+      .then((response) => response.json())
+      .then((data) => setPost(data[0]));
+  }, [slug]);
+
+  if (!post) {
+    return <Loader/>;
+  }
+
   return (
     <div className="container">
       <div className="blog-single">

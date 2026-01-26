@@ -27,7 +27,7 @@ function App() {
         <Route path="/profil" element={<Profil />} />
         <Route path="/korisnici" element={<Zadatak1 />} />
         <Route path="/blog-page" element={<Blog />} />
-        <Route path="/blog-single" element={<BlogSingle />} />
+        <Route path="/blog/:slug" element={<BlogSingle />} />
         <Route path="/tecaj" element={<Tecaj />} />
 
       </Routes>

@@ -24,6 +24,11 @@ const Navbar = () => {
                 CONTACT
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/blog-page">
+                BLOG
+              </Link>
+            </li>
           </div>
         </ul>
       </nav>
