@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
+import Loader from "../components/Loader"
 
 const About = () => {
   const [page, setPage] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   useEffect(
-
     () => {
       fetch('https://front2.edukacija.online/backend/wp-json/wp/v2/pages/783') /* kopiramo link i stavljamo ID stranice koji pročitamo kad stisnemo u wordpressu na nju */
       .then(response => response.json())
@@ -15,16 +16,18 @@ const About = () => {
           console.log(data)
         }
       )
+      .finally(() => setLoading(false));
     }, []
   )
-  
-
-
-  if(!page) return <p>Učitavanje....</p>;
-
-  
+    
   return (
-    <div dangerouslySetInnerHTML={{__html: page.content.rendered}}></div>
+    <>
+      {loading && <Loader/>}
+      {!loading && page && (
+        <div dangerouslySetInnerHTML={{__html: page.content.rendered}}></div>
+      )}
+    </>
+    
   );
 };
 

@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 
 
-import Loader from "./Loader"
-import posts from'../components/zadaci/data/blog.json';
+import Loader from "../components/Loader"
 import "./Blog.css";
 import { Link } from "react-router-dom"
 
-const Blog = () => {
+const Services = () => {
 
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true)
@@ -14,7 +13,7 @@ const Blog = () => {
 
     useEffect(
         () => {
-            fetch('https://front2.edukacija.online/backend/wp-json/wp/v2/posts?_embed')
+            fetch('https://front2.edukacija.online/backend/wp-json/wp/v2/service?_embed')
             .then(response => response.json())
             .then(
                 (data) => {
@@ -36,10 +35,9 @@ const Blog = () => {
                     { posts.map((post) => (
                         <div className='col-md-4 mb-4'>
                             <img src={post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url} className='mb-3' alt={post.title.rendered}/>
-                            <Link to={`/blog/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
+                            <Link to={`/usluge/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
                             <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
-                            <p>{post._embedded.author[0].name}</p>
-                         </div>   
+                             </div>   
 
                     )) }
                 </div>
@@ -49,4 +47,4 @@ const Blog = () => {
     )
 }
 
-export default Blog;
+export default Services;

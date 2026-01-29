@@ -7,7 +7,7 @@
 .home-naslov h1{
     font-family: 'Cal Sans';
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(50px, 5vw, 100px);
 }
 
 .razdijelnik {
@@ -23,29 +23,12 @@
 .uvod-1 {
     font-family: 'Cal Sans';
     font-weight: 0;
-    font-size: 30px;
+    font-size: clamp(30px, 3vw, 54px);
     padding: 30px 0 5px;
 }
 
 .citat-1 {
     font-family: 'Zalando Sans SemiExpanded';
     font-style: italic;
-    font-size: 20px;
-}
-
-@media (min-width: 768px) {
-    .home-naslov h1 {
-        font-size: clamp(24px, 2.5vw, 36px);
-        justify-content: center;
-    }
-
-    .uvod-1 {
-        font-size: clamp(24px, 2.5vw, 36px);
-        justify-content: center;
-    }
-    
-    .citat-1 {
-        font-size: clamp(24px, 2.5vw, 36px);
-        justify-content: center;
-    }
+    font-size: clamp(20px, 2.5vw, 38px);
 }

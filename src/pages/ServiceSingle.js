@@ -1,23 +1,22 @@
 import { useParams } from "react-router-dom";
 import "./Blog.css";
-import post from "./zadaci/data/blogsingle.json";
 import { useEffect, useState } from "react";
-import Loader from "./Loader";
+import Loader from "../components/Loader";
 
-const BlogSingle = () => {
+const ServiceSingle = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     fetch(
-      `https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&_embed`,
+      `https://front2.edukacija.online/backend/wp-json/wp/v2/service?slug=${slug}&_embed`,
     )
       .then((response) => response.json())
       .then((data) => setPost(data[0]));
   }, [slug]);
 
   if (!post) {
-    return <Loader/>;
+    return <Loader />;
   }
 
   return (
@@ -40,8 +39,6 @@ const BlogSingle = () => {
                   <h1>{post.title.rendered}</h1>
                   <h2 class="subheading"></h2>
                   <span class="meta">
-                    Autor:
-                    <a href="#!">{post._embedded.author[0].name}</a>,{" "}
                     {new Date(post.date).toLocaleDateString("hr-HR")}
                   </span>
                 </div>
@@ -66,4 +63,4 @@ const BlogSingle = () => {
   );
 };
 
-export default BlogSingle;
+export default ServiceSingle;
