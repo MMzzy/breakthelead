@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
+import Loader from "../components/Loader";
 
-import Loader from "../components/Loader"
 
 const About = () => {
   const [page, setPage] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(
     () => {
