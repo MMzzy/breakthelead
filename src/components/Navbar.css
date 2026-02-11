@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
 }
@@ -14,7 +14,7 @@
     max-width: 100%;
     gap: 0px;
     list-style: none;
-    padding: 0 20px;
+    padding: 0 10px;
     margin: 0;
     font-family: 'Cal Sans';
     font-weight: 700;
@@ -23,6 +23,7 @@
 
 .nav-item {
     display: flex;
+    align-items: center;
 }
 
 .nav-right {
@@ -52,6 +53,18 @@
     position: relative;
     top: -5px;
     fill: white;
+}
+
+@media (max-width:400px) {
+    .navbar-nav {
+        font-size: 14px;
+        gap: 8px;
+        padding: 0 5px;
+    }
+
+    .nav-link svg {
+        font-size: 15px;
+    }
 }
 
 @media (min-width: 768px) {

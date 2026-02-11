@@ -1,0 +1,134 @@
+.contact-info {
+    font-family: "Cal Sans";
+    font-size: clamp(16px, 2vw, 22px);
+    color: white;
+    max-width: 600px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.contact-info h2 {
+    font-size: clamp(30px, 5vw, 56px);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.contact-socials{
+    margin-bottom: 25px;
+    padding-left: 43px;
+}
+
+.contact-socials a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: clamp(14px, 1.6vw, 20px);
+    display: flex;
+    gap: 15px;
+    align-items: start;
+}
+
+.contact-input {
+    margin-top: 30px;
+    padding-left: 43px;
+    padding-bottom: 15px;
+}
+
+.contact-input label {
+    font-size: clamp(14px, 1.8vw, 18px);
+    margin-bottom: 8px;
+    margin-top: 25px;
+}
+
+.inputform {
+    max-width: 350px; /* Nisu toliko široki */
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1); /* Transparentni */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: "Cal Sans";
+    font-size: clamp(14px, 1.5vw, 16px);
+    transition: all 0.3s;
+    
+}
+
+.inputform:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.inputform::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Veći ekrani - slika pored teksta */
+@media (min-width: 768px) {
+    #contact .row {
+        min-height: 80vh;
+    }
+    
+    .contact-left {
+        display: flex;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 20px;
+    }
+    
+    .contact-right {
+        position: relative;
+        padding: 0 !important;
+        display: flex;
+        align-items: stretch;
+    }
+    
+    .contact-slika {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .contact-slika img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+/* Manji ekrani - slika = background */
+@media (max-width: 767px) {
+    #contact {
+        position: relative;
+        
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    #contact::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4); /* Tamni overlay */
+    }
+    
+    .contact-info {
+        position: relative;
+        z-index: 1; 
+    }
+    
+    .contact-right {
+        display: none; /* Sakrij img element */
+    }
+}
+
